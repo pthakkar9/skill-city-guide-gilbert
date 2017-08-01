@@ -6,17 +6,17 @@ var states = {
     TOPFIVE: '_TOPFIVE',
 };
 
-var location = "Seattle";
+var location = "Gilbert";
 
 var numberOfResults = 3;
 
-var APIKey = "4844d21f760b47359945751b9f875877";
+var APIKey = "e74dfbd352084b0b9f96378723b9d113";
 
 var welcomeMessage = location + " Guide. You can ask me for an attraction, the local news, or  say help. What will it be?";
 
 var welcomeRepromt = "You can ask me for an attraction, the local news, or  say help. What will it be?";
 
-var locationOverview = "Seattle is a West Coast seaport city and the  seat of King County. With an estimated 684,451 residents as of 2015, Seattle is the largest city in both the state of Washington and the Pacific Northwest region of North America. ";
+var locationOverview = "Gilbert is a town in Maricopa County, Arizona, United States, located southeast of Phoenix, within the Phoenix metropolitan area.";
 
 var HelpMessage = "Here are some things you  can say: Give me an attraction. Tell me about " + location + ". Tell me the top five things to do. Tell me the local news.  What would you like to do?";
 
@@ -45,19 +45,19 @@ var output = "";
 var alexa;
 
 var attractions = [
-    { name: "The Woodland Park Zoo", content: "located just 10 minutes north of downtown Seattle. The zoo's 92-acres and award-winning exhibits are home to more than 1,000 animals representing 300 species from around the world.", location: "There are two zoo entrances. \n West Entrance:\n Cross streets: Phinney Ave. N. between N. 55th St. & N. 56th St.\n Street address: 5500 Phinney Ave. N., Seattle WA 98103\n South Entrance:\n Cross streets: N. 50th Street & Fremont Ave. N.\n Street address: 750 N. 50th Street, Seattle WA 98103", contact: "zooinfo@zoo.org\n 206 548 2500" },
-    { name: "The EMP Museum", content: "Dedicated to contemporary popular culture, the EMP Museum was established by Microsoft co-founder Paul Allen in 2000. It's home to exhibits, interactive activity stations, sound sculpture, and various educational resources.", location: "325 5th Avenue N, Seattle, Washington", contact: "206 770 2700" },
-    { name: "Waterfront Park", content: "Designed by the Bumgardner Partnership and consultants, Waterfront Park is a public park constructed on the site of the former Schwabacher Wharf. you can enjoy excellent views of the surrounding arey, such as the city skyline, ships in drydock, container cranes and the West Seattle Bridge.", location: "1401 Alaskan Way, Seattle, WA 98101, United States", contact: "206 684 4075" },
-    { name: "Chihuly Garden and Glass", content: "Opened in 2012 on the former site of the Fun Forest, Chihuly Garden and Glass is an exhibit showcasing the work of Dale Chihuly. It comprises of three primary components: the Garden, the Glasshouse, and the Interior Exhibit. There is also a 90 seat cafe with additional outdoor dining.", location: "305 Harrison St, Seattle, WA 98109, United States", contact: "206 753 4940" },
-    { name: "Woodland Park", content: "A 90 acre public park home to many species of birds and mammals. Woodland park boasts several picnic areas, a formal rose garden, ballfields, a miniature golf range and a play area for children.", location: "1000 N 50th St, Seattle, WA 98103, United States", contact: "206 684 4075" }
+    { name: "Riparian Preserve at Water Ranch", content: "Great place to visit for hiking and photographers nice travels with benches to site and watch the sites. a lot of animals from birds and turtles.", location: "2757 E. Guadalupe Road, Gilbert, AZ 85234", contact: "There is no contact information" },
+    { name: "Hale Centre Theatre", content: "Arizona’s Premier Family Theatre in Gilbert since 2003! 350-seat theater-in-the-round putting on family-friendly shows throughout the year.", location: "50 W Page Ave, Gilbert, AZ 85233-4901", contact: "480 497 1181" },
+    { name: "Gilbert Farmers Market", content: "In the heart of Gilbert with numerous farmers and food trucks! Great live music and a variety of food.", location: "222 North Ash Street, Gilbert, AZ 85234", contact: "gilbertmarket.com" },
+    { name: "Gilbert Historical Museum", content: "Amazing and interesting organized museum filled with deep town history and fun surprises. Friendly locals work there who are informative and helpful.", location: "10 S Gilbert Rd, Gilbert, AZ 85296-1047", contact: "480 926 1577" },
+    { name: "Freestone District Park", content: "This park has baseball fields, children's train, duck pond, soccer fields, and running track. there are places to take pictures of your family over by the pond. the ramadas have cooking grills and a restroom.", location: "1045 E Juniper Ave, Gilbert, AZ 85234", contact: "480 503 6200" }
 ];
 
 var topFive = [
-    { number: "1", caption: "Visit the Space Needle and see Seattle from  above.", more: "Once the tallest structure west of the Mississippi River, The Space Needle is an observation tower that reaches a height of 605 feet. The observation deck falls slightly below this, offering views at 520 feet.", location: "400 Broad St. Seattle, WA 98109", contact: "400 Broad St. Seattle, WA 98109" },
-    { number: "2", caption: "Get shopping at Pike Place Market.", more: "One of the oldest farmer's markets in America, Pike Place Market is Seattle's historic arcade of various vendors, winding alleys and stairways to lower levels. The market plays host to more than 10 million visitors annually.", location: "Pike Place Market PDA, 85 Pike Street, Room 500, Seattle, WA 98101", contact: "info@pikeplacemarket.org \n 206 682 7453" },
-    { number: "3", caption: "Earn your  wings at the Museum  of Flight.", more: "This museum is a non-profit air and space museum located at the southern end of King County International Airport . It's the largest private museum of its kind in the world and attracts over 500,000 visitors every year", location: "9404 East Marginal Way South Seattle, WA 98108-4097", contact: "206 764 5700" },
-    { number: "4", caption: "Breathe in the culture  at the Seattle Art  Museum.", more: "Also known as \"SAM\", the Seattle Art Museum maintains three major facilities: its main museum in downtown Seattle; the Seattle Asian Art Museum, and the Olympic Sculpture Park. The flagship museum is host to several great exhibitions and collections for you to experience.", location: "1300 First Ave Seattle, WA 98101", contact: "206 654 3100" },
-    { number: "5", caption: "Take a spin on the  Seattle Great Wheel.", more: "See Seattle's skyline from the giant Ferris wheel situated on Pier 57. The Seattle Great Wheel is the largest observation wheel on the west coast, standing 175 feet tall.", location: "1301 Alaskan Way, Seattle, Washington 98101", contact: "greatwheel@pier57seattle.com \n 206 623 8607" }
+    { number: "1", caption: "Visit the Downtown Gilbert", more: "The Town of Gilbert has done an amazing job of making the downtown area a great place to dine and hang out with friends. I highly recommend a visit with friends or family.", location: "328 N Gilbert Rd, Gilbert, AZ 85234-5770", contact: "480 584 4760" },
+    { number: "2", caption: "Get shopping at San Tan Village mall", more: "San Tan Village has it all. Shopping, great eats, drinks, movies and ice cream. Great for a family outing.", location: "2218 E Williams Field Rd, Gilbert, AZ 85295-0775", contact: "480 282 9500" },
+    { number: "3", caption: "Do something new at Gilbert Rotary Centennial Observatory", more: "Be sure to get there early before sun down to make sure you can get some time to look through the telescopes.", location: "2757 East Guadalupe Road, Riparian Preserve At Water Ranch, Gilbert, AZ 85234", contact: "2757 East Guadalupe Road, Riparian Preserve At Water Ranch, Gilbert, AZ 85234" },
+    { number: "4", caption: "Practise that swing at Topgolf", more: "Top Golf is a combination of golf, skee ball, bowling & darts. This place not only keeps you and your group entertained, but also feeds you like a king. Food is delicious, make sure to try the nachos!", location: "1689 S San Tan Village Pkwy, Gilbert, AZ 85295-0861", contact: "480 240 1282" },
+    { number: "5", caption: "Go bowling at FlipSide", more: "This is a great place to take kids at any time, but in the 110 degrees of summer, it's really welcome. Bowling, video games, laser tag and dozen of other games will fill any afternoon for kids up to early teens.", location: "4874 S Val Vista Dr, Gilbert, AZ 85298-7323", contact: "480 471 8444" }
 ];
 
 var topFiveIntro = "Here are the top five things to  do in " + location + ".";
